@@ -48,12 +48,15 @@ public class Vuelo implements Serializable {
 	@Column(nullable = false, name = "duracion")
 	private String duracion;
 	
-	@Column(nullable = false, name = "tipo")
-	private String tipo;
+	@Column(nullable = false, name = "tipoRuta")
+	private String tipoRuta;
 	
 	@ManyToOne
 	@JoinColumn(name = "idRuta", referencedColumnName = "idRuta")
 	private Ruta idRuta;
+	
+	@Column(nullable = false, name = "tipoVuelo")
+	private String tipoVuelo;
 
 	public Long getIdVuelo() {
 		return idVuelo;
@@ -103,19 +106,26 @@ public class Vuelo implements Serializable {
 		this.duracion = duracion;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getTipoRuta() {
+		return tipoRuta;
 	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	
+	public void setTipoRuta(String tipoRuta) {
+		this.tipoRuta = tipoRuta;
 	}
-
 	public Ruta getIdRuta() {
 		return idRuta;
 	}
 
 	public void setIdRuta(Ruta idRuta) {
 		this.idRuta = idRuta;
+	}
+
+	public String getTipoVuelo() {
+		return tipoVuelo;
+	}
+
+	public void setTipoVuelo(String tipoVuelo) {
+		this.tipoVuelo = tipoVuelo;
 	}
 }

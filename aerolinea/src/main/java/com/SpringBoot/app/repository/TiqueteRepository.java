@@ -3,7 +3,9 @@ package com.SpringBoot.app.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.SpringBoot.app.entity.Tiquete;
+
 @Repository
-public interface Ruta extends JpaRepository<Ruta, Long> {
+public interface TiqueteRepository extends JpaRepository<Tiquete, Long> {
 
 }
