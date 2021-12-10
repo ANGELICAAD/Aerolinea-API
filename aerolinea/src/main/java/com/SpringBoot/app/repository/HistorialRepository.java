@@ -12,5 +12,5 @@ import com.SpringBoot.app.entity.Historial;
 public interface HistorialRepository extends JpaRepository<Historial, Long> {
 
 	@Query(value = "select cantViajes, cantMillas from historial where historial.idPasajero=:idPasajero", nativeQuery=true)
-	List<Historial> listaHistoriaPasajero(Long idPasajero);
+	List<Object[]> listaHistoriaPasajero(Long idPasajero);
 }

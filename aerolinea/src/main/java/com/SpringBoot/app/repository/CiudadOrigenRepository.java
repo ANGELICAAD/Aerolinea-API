@@ -12,11 +12,11 @@ import com.SpringBoot.app.entity.CiudadOrigen;
 public interface CiudadOrigenRepository extends JpaRepository<CiudadOrigen, Long> {
 
 	@Query(value = "select ciudad from ciudadorigen", nativeQuery=true)
-	List<CiudadOrigen> listaCiudadesOrigen();
+	List<String> listaCiudadesOrigen();
 	
-	@Query(value = "select ciudaddestino.ciudad from ciudaddestino, "
+	@Query(value = "select ciudad from ciudaddestino, "
 			+ "(select idCiudadOrigen from ciudadorigen where ciudadorigen.ciudad=:ciudadOrigen) "
 			+ "as subCiudadOrigen where "
 			+ "ciudaddestino.idCiudadOrigen=subCiudadOrigen.idCiudadOrigen", nativeQuery=true)
-	List<CiudadOrigen> listaCiudadesDestino(String ciudadOrigen);
+	List<String> listaCiudadesDestino(String ciudadOrigen);
 }

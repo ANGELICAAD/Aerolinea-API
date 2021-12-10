@@ -40,10 +40,9 @@ public class Vuelo implements Serializable {
 	@Column(nullable = false, name = "precioUnitario")
 	private double precioUnitario;
 	
-	@Column(nullable = false, name = "fechaHora")
-	// @DateTimeFormat(pattern = "%Y-%m-%d %H:%m:%s")
-	@DateTimeFormat(pattern = "%Y-%m-%d hh:mm:ss")
-	private Date fechaHora;
+	@Column(nullable = false, name = "fecha")
+	@DateTimeFormat(pattern = "%Y-%m-%d")
+	private Date fecha;
 	
 	@Column(nullable = false, name = "duracion")
 	private String duracion;
@@ -57,6 +56,9 @@ public class Vuelo implements Serializable {
 	
 	@Column(nullable = false, name = "tipoVuelo")
 	private String tipoVuelo;
+	
+	@Column(nullable = false, name = "hora")
+	private String hora;
 
 	public Long getIdVuelo() {
 		return idVuelo;
@@ -90,12 +92,12 @@ public class Vuelo implements Serializable {
 		this.precioUnitario = precioUnitario;
 	}
 
-	public Date getFechaHora() {
-		return fechaHora;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaHora(Date fechaHora) {
-		this.fechaHora = fechaHora;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public String getDuracion() {
@@ -127,5 +129,13 @@ public class Vuelo implements Serializable {
 
 	public void setTipoVuelo(String tipoVuelo) {
 		this.tipoVuelo = tipoVuelo;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 }
