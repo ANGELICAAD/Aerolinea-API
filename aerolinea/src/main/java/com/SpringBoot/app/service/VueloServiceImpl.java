@@ -17,10 +17,15 @@ public class VueloServiceImpl implements VueloService {
 	private VueloRepository vueloRepository;
 	
 	@Override
-	public List<Object[]> listaVuelosIdaFecha(Date fechaSeleccionada, String ciudadOrigen) {
-		return vueloRepository.listaVuelosIdaFecha(fechaSeleccionada, ciudadOrigen);
+	public List<Object[]> listaVuelosIdaFecha(Date fechaSeleccionada, String ciudadOrigen, String ciudadDestino) {
+		return vueloRepository.listaVuelosIdaFecha(fechaSeleccionada, ciudadOrigen, ciudadDestino);
 	}
 
+	@Override
+	public List<Object[]> listaVuelosRegresoFecha(Date fechaSeleccionada, String ciudadOrigen, String ciudadDestino) {
+		return vueloRepository.listaVuelosRegresoFecha(fechaSeleccionada, ciudadOrigen, ciudadDestino);
+	}
+	
 	@Override
 	@Transactional
 	public Vuelo guardarVuelo(Vuelo vuelo) {

@@ -27,15 +27,26 @@ public class VueloController {
 	@Autowired
 	public VueloService vueloService;
 	
-	@GetMapping("/vuelosida/{ciudadorigen}&&fecha")
-	public ResponseEntity<?> listVuelosIda(@RequestParam("fechaVuelo") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fecha, @PathVariable String ciudadorigen) {
-		List<Object[]> vuelosIda = (List<Object[]>) vueloService.listaVuelosIdaFecha(fecha, ciudadorigen);
+	@GetMapping("/vuelosida/{ciudadorigen}&&{ciudaddestino}&&fecha")
+	public ResponseEntity<?> listVuelosIda(@RequestParam("fechaVuelo") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fecha, @PathVariable String ciudadorigen, @PathVariable String ciudaddestino) {
+		List<Object[]> vuelosIda = (List<Object[]>) vueloService.listaVuelosIdaFecha(fecha, ciudadorigen, ciudaddestino);
 				
 		if(vuelosIda.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}
 		
 		return ResponseEntity.ok(vuelosIda);
+	}
+	
+	@GetMapping("/vuelosregreso/{ciudadorigen}&&{ciudaddestino}&&fecha")
+	public ResponseEntity<?> listVuelosRegreso(@RequestParam("fechaVuelo") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fecha, @PathVariable String ciudadorigen, @PathVariable String ciudaddestino) {
+		List<Object[]> vuelosRegreso = (List<Object[]>) vueloService.listaVuelosRegresoFecha(fecha, ciudadorigen, ciudaddestino);
+				
+		if(vuelosRegreso.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(vuelosRegreso);
 	}
 	
 	@PostMapping

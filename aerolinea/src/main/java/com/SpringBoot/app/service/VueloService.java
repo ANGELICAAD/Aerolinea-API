@@ -7,7 +7,9 @@ import com.SpringBoot.app.entity.Vuelo;
 
 public interface VueloService {
 
-	public List<Object[]> listaVuelosIdaFecha(Date fechaSeleccionada, String ciudadOrigen);
+	public List<Object[]> listaVuelosIdaFecha(Date fechaSeleccionada, String ciudadOrigen, String ciudadDestino);
+	
+	public List<Object[]> listaVuelosRegresoFecha(Date fechaSeleccionada, String ciudadOrigen, String ciudadDestino);
 	
 	public Vuelo guardarVuelo(Vuelo vuelo);
 }
