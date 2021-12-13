@@ -7,4 +7,6 @@ import com.SpringBoot.app.entity.Historial;
 public interface HistorialService {
 
 	public List<Object[]> listaHistoriaPasajero(Long idPasajero);
+	
+	public Historial guardarHistorial(Historial historial);
 }

@@ -28,10 +28,10 @@ public class Historial implements Serializable {
 	@Column(name = "idHistorial")
 	private Long idHistorial;
 	
-	@Column(nullable = false, name = "cantViajes")
+	@Column(nullable = true, name = "cantViajes")
 	private int cantViajes;
 	
-	@Column(nullable = false, name = "cantMillas")
+	@Column(nullable = true, name = "cantMillas")
 	private double cantMillas;
 	
 	@ManyToOne

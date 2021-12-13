@@ -32,7 +32,7 @@ public class Vuelo implements Serializable {
 	private Long idVuelo;
 	
 	@Column(nullable = false, name = "numVuelo")
-	private int numVuelo;
+	private String numVuelo;
 	
 	@Column(nullable = false, name = "sillasDisponibles")
 	private String sillasDisponibles;
@@ -68,11 +68,11 @@ public class Vuelo implements Serializable {
 		this.idVuelo = idVuelo;
 	}
 
-	public int getNumVuelo() {
+	public String getNumVuelo() {
 		return numVuelo;
 	}
 
-	public void setNumVuelo(int numVuelo) {
+	public void setNumVuelo(String numVuelo) {
 		this.numVuelo = numVuelo;
 	}
 

@@ -47,7 +47,7 @@ public class Pasajero implements Serializable {
 	@Column(nullable = false, name = "numPasaporte")
 	private String numPasaporte;
 	
-	@Column(nullable = false, name = "fechaVencimientoVisa")
+	@Column(nullable = true, name = "fechaVencimientoVisa")
 	@DateTimeFormat(pattern = "%Y-%m-%d")
 	private Date fechaVencimientoVisa;
 

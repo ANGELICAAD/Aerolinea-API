@@ -19,4 +19,9 @@ public class HistorialServiceImpl implements HistorialService {
 		return historialRepository.listaHistoriaPasajero(idPasajero);
 	}
 
+	@Override
+	public Historial guardarHistorial(Historial historial) {
+		return historialRepository.save(historial);
+	}
+
 }

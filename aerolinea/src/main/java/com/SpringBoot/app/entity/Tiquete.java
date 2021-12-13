@@ -28,9 +28,6 @@ public class Tiquete implements Serializable {
 	@Column(name = "idTiquete")
 	private Long idTiquete;
 	
-	@Column(nullable = false, name = "cantPersonas")
-	private int cantPersonas;
-	
 	@Column(nullable = false, name = "totalPago")
 	private double totalPago;
 	
@@ -48,14 +45,6 @@ public class Tiquete implements Serializable {
 
 	public void setIdTiquete(Long idTiquete) {
 		this.idTiquete = idTiquete;
-	}
-
-	public int getCantPersonas() {
-		return cantPersonas;
-	}
-
-	public void setCantPersonas(int cantPersonas) {
-		this.cantPersonas = cantPersonas;
 	}
 
 	public double getTotalPago() {
